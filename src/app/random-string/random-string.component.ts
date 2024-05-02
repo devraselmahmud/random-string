@@ -8,8 +8,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './random-string.component.css'
 })
 export class RandomStringComponent {
-  @Input() click: any
-  value: string = ''
+  @Input() click: any;
+  value: string = '';
+  array = new Array(5);
 
   onClick(){
     this.generateRandom();
@@ -17,17 +18,19 @@ export class RandomStringComponent {
 
   generateRandom() {
     var generatedString: string;
-    var array = new Array(5);
-    var capacity = 5;
+    // var array = new Array(5);
+    const capacity = 5;
 
     do {
         generatedString = this.generateString(10);
-    } while (array.includes(generatedString));
+    } while (this.array.includes(generatedString));
+
+    
 
     // Store the current generated string
-    if(array.length === capacity){
-        array.shift();
-        array.push(generatedString);
+    if(this.array.length === capacity){
+        this.array.shift();
+        this.array.push(generatedString);
     }
     
     this.value = generatedString;

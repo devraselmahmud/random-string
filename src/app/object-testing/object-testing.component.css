@@ -1,0 +1,18 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+}
+
+th, td{
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: aliceblue;
+}
+
+tr:hover{
+    background-color: #E5E8E8;
+}
