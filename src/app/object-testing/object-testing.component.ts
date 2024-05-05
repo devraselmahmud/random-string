@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-object-testing',
@@ -9,11 +10,17 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './object-testing.component.html',
   styleUrl: './object-testing.component.css'
 })
-export class ObjectTestingComponent {
+export class ObjectTestingComponent implements OnInit {
 
-   @Input() students: any;
+   students: any = [];
 
    selectedRows: number = 10;
 
+   constructor(private stdService: StudentService){
 
+   }
+
+ngOnInit(): void {
+    this.students = this.stdService.getStudentInfo();
+}
 }
