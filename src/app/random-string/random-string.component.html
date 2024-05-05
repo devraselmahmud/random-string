@@ -3,4 +3,11 @@
     <p class="badge text-bg-light text-info text-wrap m-2">
         {{value}}
     </p>
+    <!-- <img src="{{imageUrl}}" alt=""> -->
+    <!-- <img [src]="imageUrl" alt=""> -->
+    <!-- <input value={{email}} type="text"> -->
+
+    <input [(ngModel)]="email" type="text">
+    <button type="submit" >save</button>
+    <p>{{email}}</p>
 </div>

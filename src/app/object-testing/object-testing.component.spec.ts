@@ -25,7 +25,7 @@ describe('ObjectTestingComponent', () => {
     const fixture = TestBed.createComponent(ObjectTestingComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('0'))
+    expect(compiled.querySelector(''))
   })
 
 });

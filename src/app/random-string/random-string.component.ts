@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-random-string',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './random-string.component.html',
   styleUrl: './random-string.component.css'
 })
@@ -11,6 +14,9 @@ export class RandomStringComponent {
   @Input() click: any;
   value: string = '';
   array = new Array(5);
+  // imageUrl = "https://res.cloudinary.com/simpleview/image/upload/v1613600936/clients/norway/Urnes_Stave_Church_luster_fjord_Norway_photo_Thomas_Morel_646b0cd1-2926-4b68-867e-8d4a6abba6b2.jpg";
+
+  email = 'rasel@gmail.com';
 
   onClick(){
     this.generateRandom();
