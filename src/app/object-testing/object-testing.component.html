@@ -1,28 +1,30 @@
-<div>
-    <select [(ngModel)]="selectedRows">
-        <option value="2">2</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-    </select>
+<div class="container-fluid mt-5">
+    <div>
+        <select [(ngModel)]="selectedRows">
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Birthdate</th>
+                <th>Joining Date</th>
+                <th>Separation date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students.slice(0, selectedRows)">
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.birthdate }}</td>
+                <td>{{ student.joining_date }}</td>
+                <td>{{ student.separation_date || 'N/A' }}</td>
+            </tr>
+        </tbody>
+    </table>    
 </div>
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Birthdate</th>
-            <th>Joining Date</th>
-            <th>Separation date</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let student of students.slice(0, selectedRows)">
-            <td>{{ student.name }}</td>
-            <td>{{ student.age }}</td>
-            <td>{{ student.birthdate }}</td>
-            <td>{{ student.joining_date }}</td>
-            <td>{{ student.separation_date || 'N/A' }}</td>
-        </tr>
-    </tbody>
-</table>
