@@ -7,14 +7,14 @@
     </button>
     <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link text-bg-light" href="/">Home</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" (click)="changeColor($event)" [ngStyle]="{'color': homeColor}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-success" routerLink="/random-string">Random</a>
+          <a class="nav-link" routerLink="/random-string" (click)="changeColor($event)" [ngStyle]="{'color': randomColor}">Random</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-success" routerLink="/object-testing">Student</a>
+          <a class="nav-link" routerLink="/object-testing" (click)="changeColor($event)" [ngStyle]="{'color': studentColor}">Student</a>
         </li>
       </ul>
     </div>
