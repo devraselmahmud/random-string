@@ -31,7 +31,8 @@ export class AppComponent {
       this.randomColor = 'green';
       this.homeColor = 'black';
       this.studentColor = 'blue';
-    }else if(target.textContent === 'Student'){
+    }
+    else if(target.textContent === 'Student'){
       this.studentColor = 'green';
       this.homeColor = 'black';
       this.randomColor = 'blue';
